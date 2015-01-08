@@ -1,0 +1,1 @@
+This is a Polling Web app created using Django framework of Python. In this there can be different users as well as different groups. Admin can create various topics to take votes on and all this data is stored in its tatabase sqlite.
