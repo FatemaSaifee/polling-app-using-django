@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, url
 from polls import views
+from django.contrib.auth.decorators import login_required, permission_required
 
 urlpatterns = patterns('',
     url(r'^$', views.IndexView.as_view(), name='index'),
@@ -8,7 +9,13 @@ urlpatterns = patterns('',
     url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
 )
 
-
+#if login required
+'''
+urlpatterns = [
+    url(r'^about/', login_required(TemplateView.as_view(template_name="secret.html"))),
+    url(r'^vote/', permission_required('polls.can_vote')(VoteView.as_view())),
+]
+'''
 '''
 from django.conf.urls import patterns, url, include
 

@@ -1,0 +1,5 @@
+<h2>Register</h2>
+<form action='/accounts/register_success/' method-"post">{% csrf_token %}
+{{ form|linebreaks }}<br>
+ <input type="submit" value="Register" />
+ </form>
